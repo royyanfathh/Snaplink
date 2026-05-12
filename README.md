@@ -1,85 +1,217 @@
-# SnapLink - Modern URL Shortener
+# URL Shortener
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel">
-  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-</p>
-
-## 📝 Description
-
-**SnapLink** is a lightweight, high-performance, and premium URL shortener built with Laravel. It offers a seamless experience for transforming long, cluttered URLs into clean, manageable links. Designed with a focus on aesthetics and speed, SnapLink provides instant results, detailed analytics, and QR code generation without the bloat of heavy CSS frameworks.
-
-## ✨ Features
-
-- **Dual Mode Shortening**: Choose between a random 6-character slug or create your own custom vanity URL.
-- **QR Code Generation**: Instantly generate high-quality QR codes for every shortened link, available for download as PNG.
-- **Real-time Analytics**: Monitor your links' performance with a dedicated dashboard showing total clicks (hits) and creation dates.
-- **Multilingual Support**: Fully localized interface in **English** and **Indonesian**.
-- **Premium UI/UX**: Dark-themed, modern interface built with Vanilla CSS, featuring smooth animations and glassmorphism effects.
-- **Instant Redirection**: High-speed link redirection with hit tracking.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
-
-## 🚀 Tech Stack
-
-- **Backend**: Laravel 11 (PHP 8.2+)
-- **Database**: MySQL
-- **Frontend**: Blade Templating Engine
-- **Styling**: Vanilla CSS (No frameworks for maximum performance)
-- **Library**: [qrcode.js](https://davidshimjs.github.io/qrcodejs/) for client-side QR generation.
-
-## 📋 Requirements
-
-- PHP >= 8.2
-- Composer
-- MySQL
-- Node.js & NPM (Optional, for asset compilation if using Vite)
-
-## 🛠️ Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/snaplink.git
-   cd snaplink
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   composer install
-   ```
-
-3. **Environment Setup**:
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-
-4. **Database Configuration**:
-   By default, this project uses MySQL. Create the database file:
-   ```bash
-   touch database/database.MySQL
-   ```
-   *Make sure DB_CONNECTION=MySQL in your .env file.*
-
-5. **Run Migrations**:
-   ```bash
-   php artisan migrate
-   ```
-
-6. **Start the application**:
-   ```bash
-   php artisan serve
-   ```
-
-## 📖 Usage
-
-1. **Shorten a URL**: Enter your long link in the input box, select "Auto Generate" or "Custom Slug", and hit "Shorten".
-2. **Copy & Share**: Use the "Copy" button to save the link to your clipboard or generate a QR code for physical sharing.
-3. **Track Performance**: Navigate to the **Analytics** page to see how many people have clicked your links.
-4. **Switch Language**: Use the EN/ID toggle in the navigation bar to change the interface language.
+![Laravel](https://img.shields.io/badge/Laravel-Latest-red)
+![PHP](https://img.shields.io/badge/PHP-8.1+-blue)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![CSS](https://img.shields.io/badge/CSS-Vanilla-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
-Built with ❤️ using [Laravel](https://laravel.com).
+## Description
+
+**URL Shortener** is a simple web-based application built with Laravel that allows users to shorten long URLs into cleaner, shorter, and easier-to-share links.
+
+This application is designed to provide a fast and efficient way to generate shortened links while maintaining a clean and minimal user experience.
+
+Main functionalities include:
+
+- shorten long URLs instantly
+- generate unique short links automatically
+- redirect short URLs to their original destination
+- track total clicks for each generated link
+
+This project was developed as a lightweight portfolio project to demonstrate fundamental web development concepts using Laravel, including routing, validation, database operations, and URL redirection.
+
+---
+
+## Features
+
+### URL Shortening
+- convert long URLs into short links
+- automatic random short code generation
+
+Example:
+
+```text
+https://www.google.com/search?q=laravel
+↓
+http://localhost:8000/aB12Cd
+```
+
+---
+
+### Redirection
+- automatically redirect generated short links to the original URL
+
+---
+
+### Hit Counter
+- record and display total visits for each shortened URL
+
+---
+
+## Tech Stack
+
+### Backend
+- PHP 8.1+
+- Laravel 13.7
+- MySQL
+
+### Frontend
+- Blade Template Engine
+- HTML
+- Vanilla CSS
+- JavaScript
+
+---
+
+## Requirements
+
+Before installation, make sure your system has:
+
+- PHP >= 8.1
+- Composer
+- MySQL / MariaDB
+- Node.js >= 18
+- NPM
+- Git
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/royyanfathh/Url-Shortener.git
+cd Url-Shortener
+```
+
+Install PHP dependencies:
+
+```bash
+composer install
+```
+
+Install frontend dependencies:
+
+```bash
+npm install
+```
+
+Copy environment file:
+
+```bash
+cp .env.example .env
+```
+
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+Configure database in `.env`:
+
+```env
+DB_DATABASE=url_shortener
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+Run migrations:
+
+```bash
+php artisan migrate
+```
+
+Build frontend assets:
+
+```bash
+npm run build
+```
+
+Run development server:
+
+```bash
+php artisan serve
+```
+
+Open in browser:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+## Usage
+
+### Create Short URL
+
+1. Open the application homepage
+2. Enter a long URL
+3. Click **Shorten**
+4. Copy the generated short URL
+
+---
+
+### Redirect to Original URL
+
+Open the generated short URL:
+
+```text
+http://127.0.0.1:8000/aB12Cd
+```
+
+The system will automatically redirect to the original destination URL.
+
+---
+
+### Track Link Visits
+
+Each time a shortened link is opened:
+- the hit counter increases automatically
+
+---
+
+## Project Structure
+
+```text
+app/
+├── Http/Controllers/
+├── Models/
+
+database/
+├── migrations/
+
+resources/
+└── views/
+
+routes/
+└── web.php
+```
+
+---
+
+## Screenshots
+
+![Home Page](docs/home.png)
+
+![Generated URL](docs/result.png)
+
+---
+
+## Author
+
+**Royyan Fathh**
+
+GitHub:  
+https://github.com/royyanfathh
+
+---
+
+## License
+
+This project is open-sourced under the MIT License.
