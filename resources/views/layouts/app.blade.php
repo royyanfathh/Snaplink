@@ -7,10 +7,10 @@
 
     <title>@yield('title', 'SnapLink') — URL Shortener</title>
 
-    {{-- Google Fonts --}}
+    {{-- Google Fonts: Archivo Black + Space Grotesk + JetBrains Mono --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     {{-- Global CSS --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -48,7 +48,7 @@
                     <polyline points="21 16 21 21 16 21"/>
                     <line x1="15" y1="15" x2="21" y2="21"/>
                 </svg>
-                <span>{{ __('messages.nav.shorten') }}</span>
+                <span>[ {{ __('messages.nav.shorten') }} ]</span>
             </a>
             <a href="{{ route('analytics') }}"
                class="nav-link {{ request()->routeIs('analytics') ? 'active' : '' }}">
@@ -59,13 +59,13 @@
                     <line x1="12" y1="20" x2="12" y2="4"/>
                     <line x1="6"  y1="20" x2="6"  y2="14"/>
                 </svg>
-                <span>{{ __('messages.nav.analytics') }}</span>
+                <span>[ {{ __('messages.nav.analytics') }} ]</span>
             </a>
 
             {{-- Language Switcher --}}
             <div class="lang-switcher">
                 <a href="{{ route('lang', 'en') }}" class="lang-btn {{ app()->getLocale() == 'en' ? 'active' : '' }}">EN</a>
-                <span class="lang-sep">/</span>
+                <span class="lang-sep">///</span>
                 <a href="{{ route('lang', 'id') }}" class="lang-btn {{ app()->getLocale() == 'id' ? 'active' : '' }}">ID</a>
             </div>
         </div>
@@ -77,8 +77,8 @@
     {{-- ── FOOTER ── --}}
     <footer>
         {{ __('messages.footer.built_with') }} <a href="https://laravel.com" target="_blank" rel="noopener">Laravel</a>
-        &nbsp;·&nbsp;
-        &copy; {{ date('Y') }} SnapLink
+        &nbsp;///&nbsp;
+        &copy; {{ date('Y') }} SnapLink&reg;
     </footer>
 
     {{-- ── QR CODE MODAL ── --}}
@@ -88,12 +88,12 @@
             {{-- Header --}}
             <div class="modal-header">
                 <div>
-                    <h2 class="modal-title" id="qr-modal-title">{{ __('messages.qr_modal.title') }}</h2>
+                    <h2 class="modal-title" id="qr-modal-title">[ {{ __('messages.qr_modal.title') }} ]</h2>
                     <p class="modal-subtitle" id="qr-modal-url"></p>
                 </div>
                 <button class="modal-close" onclick="closeQrModal()" aria-label="Tutup modal">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2.5"
+                         stroke="currentColor" stroke-width="3"
                          stroke-linecap="round" stroke-linejoin="round">
                         <line x1="18" y1="6" x2="6" y2="18"/>
                         <line x1="6" y1="6" x2="18" y2="18"/>
@@ -124,7 +124,7 @@
                     <svg id="qr-copy-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2.5"
                          stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                     </svg>
                     <span id="qr-copy-label">{{ __('messages.qr_modal.copy_url') }}</span>
@@ -150,7 +150,7 @@
      */
     function copyUrl(url, btnId, iconId, labelId) {
         const copyIcon = `
-            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+            <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
         `;
         const checkIcon = `<polyline points="20 6 9 17 4 12"/>`;
@@ -223,7 +223,7 @@
                 text:       url,
                 width:      220,
                 height:     220,
-                colorDark:  '#0d0d0d',
+                colorDark:  '#1A1A1A',
                 colorLight: '#ffffff',
                 correctLevel: QRCode.CorrectLevel.H,
             });

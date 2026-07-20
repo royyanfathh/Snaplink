@@ -11,7 +11,7 @@
     <div class="page-header">
         <div>
             <h1 class="page-title">{{ __('messages.analytics.title') }}</h1>
-            <p class="page-subtitle">{{ __('messages.analytics.subtitle') }}</p>
+            <p class="page-subtitle">/// {{ __('messages.analytics.subtitle') }}</p>
         </div>
         <a href="{{ route('home') }}" class="btn-new">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
@@ -30,7 +30,7 @@
         <div class="summary-card">
             <div class="summary-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2"
+                     stroke="currentColor" stroke-width="2.5"
                      stroke-linecap="round" stroke-linejoin="round">
                     <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
@@ -38,28 +38,28 @@
             </div>
             <div class="summary-body">
                 <div class="summary-value">{{ number_format($totalLinks) }}</div>
-                <div class="summary-label">{{ __('messages.stats.total_links') }}</div>
+                <div class="summary-label">[ {{ __('messages.stats.total_links') }} ]</div>
             </div>
         </div>
 
         <div class="summary-card">
             <div class="summary-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2"
+                     stroke="currentColor" stroke-width="2.5"
                      stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                 </svg>
             </div>
             <div class="summary-body">
                 <div class="summary-value">{{ number_format($totalHits) }}</div>
-                <div class="summary-label">{{ __('messages.stats.total_hits') }}</div>
+                <div class="summary-label">[ {{ __('messages.stats.total_hits') }} ]</div>
             </div>
         </div>
 
         <div class="summary-card">
             <div class="summary-icon">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-                     stroke="currentColor" stroke-width="2"
+                     stroke="currentColor" stroke-width="2.5"
                      stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"/>
                     <polyline points="12 6 12 12 16 14"/>
@@ -69,7 +69,7 @@
                 <div class="summary-value">
                     {{ $totalLinks > 0 ? number_format($totalHits / $totalLinks, 1) : '0' }}
                 </div>
-                <div class="summary-label">{{ __('messages.stats.avg_hits') }}</div>
+                <div class="summary-label">[ {{ __('messages.stats.avg_hits') }} ]</div>
             </div>
         </div>
 
@@ -87,7 +87,7 @@
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
                 </svg>
             </div>
-            <p class="empty-title">{{ __('messages.analytics.empty_title') }}</p>
+            <p class="empty-title">[ {{ __('messages.analytics.empty_title') }} ]</p>
             <p class="empty-desc">{{ __('messages.analytics.empty_desc') }}</p>
             <a href="{{ route('home') }}" class="btn-new" style="margin-top:20px;">{{ __('messages.analytics.btn_new') }}</a>
         </div>
@@ -208,7 +208,7 @@
                                          width="12" height="12" viewBox="0 0 24 24"
                                          fill="none" stroke="currentColor" stroke-width="2.5"
                                          stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                        <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
                                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                                     </svg>
                                     <span id="copy-label-{{ $item->id }}">{{ __('messages.result.copy') }}</span>

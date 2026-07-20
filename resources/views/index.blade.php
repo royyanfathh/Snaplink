@@ -10,13 +10,13 @@
     {{-- Eyebrow --}}
     <div class="hero-eyebrow">
         <div class="eyebrow-dot"></div>
-        {{ __('messages.hero.eyebrow') }}
+        >>> {{ __('messages.hero.eyebrow') }}
         <div class="eyebrow-dot"></div>
     </div>
 
     {{-- Heading --}}
     <h1 class="hero-title">
-        <span class="dim">{{ __('messages.hero.title_dim') }}</span><br>
+        <span class="dim">{{ __('messages.hero.title_dim') }}</span>
         {{ __('messages.hero.title_main') }}
     </h1>
 
@@ -123,13 +123,13 @@
                         maxlength="30"
                     >
                 </div>
-                <p class="slug-hint">{{ __('messages.form.custom_slug_hint') }}</p>
+                <p class="slug-hint">/// {{ __('messages.form.custom_slug_hint') }}</p>
             </div>
 
             {{-- Submit --}}
             <button type="submit" class="btn-shorten" id="submit-btn">
-                <span id="btn-content" style="display:flex;align-items:center;gap:7px;">
-                    {{ __('messages.form.btn_shorten') }}
+                <span id="btn-content" style="display:flex;align-items:center;gap:8px;">
+                    >>> {{ __('messages.form.btn_shorten') }}
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2.5"
                          stroke-linecap="round" stroke-linejoin="round">
@@ -150,7 +150,7 @@
                 </svg>
             </div>
             <div class="alert-body">
-                <div class="alert-title">{{ __('messages.result.success') }}</div>
+                <div class="alert-title">[ {{ __('messages.result.success') }} ]</div>
                     <div class="short-url-row">
                         <a
                             href="{{ session('short_url') }}"
@@ -169,7 +169,7 @@
                             <svg id="copy-icon-svg" width="12" height="12" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2.5"
                                  stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <rect x="9" y="9" width="13" height="13" rx="0" ry="0"/>
                                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
                             </svg>
                             <span id="copy-label">{{ __('messages.result.copy') }}</span>
@@ -212,11 +212,11 @@
             </div>
             <div class="alert-body">
                 <div class="alert-title">
-                    {{ $errors->has('custom_code') ? __('messages.form.validation.invalid_slug') : __('messages.form.validation.invalid_url') }}
+                    [ {{ $errors->has('custom_code') ? __('messages.form.validation.invalid_slug') : __('messages.form.validation.invalid_url') }} ]
                 </div>
                 <ul class="error-list">
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        <li>/// {{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
@@ -226,19 +226,19 @@
     </div>{{-- end .form-card --}}
 
     {{-- ── STATS ── --}}
-    <div class="divider" style="margin-top:56px;"></div>
+    <div class="divider" style="margin-top:48px;"></div>
     <div class="stats-strip">
         <div class="stat-item">
             <div class="stat-value">∞</div>
-            <div class="stat-label">No Limits</div>
+            <div class="stat-label">[ No Limits ]</div>
         </div>
         <div class="stat-item">
             <div class="stat-value">&lt;1s</div>
-            <div class="stat-label">Processing</div>
+            <div class="stat-label">[ Processing ]</div>
         </div>
         <div class="stat-item">
             <div class="stat-value">100%</div>
-            <div class="stat-label">Free Forever</div>
+            <div class="stat-label">[ Free Forever ]</div>
         </div>
     </div>
     <div class="divider" style="margin-top:0; margin-bottom:40px;"></div>
@@ -325,7 +325,7 @@
     document.getElementById('shorten-form').addEventListener('submit', function () {
         const btn     = document.getElementById('submit-btn');
         const content = document.getElementById('btn-content');
-        content.innerHTML = '<span class="spinner"></span> Processing...';
+        content.innerHTML = '<span class="spinner"></span> PROCESSING...';
         btn.disabled = true;
     });
 
