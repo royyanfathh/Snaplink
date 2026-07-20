@@ -29,4 +29,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function shortUrls()
+    {
+        return $this->hasMany(ShortUrl::class);
+    }
 }

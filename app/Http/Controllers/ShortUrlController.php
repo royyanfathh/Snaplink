@@ -76,6 +76,7 @@ class ShortUrlController extends Controller
         ShortUrl::create([
             'original_url' => $request->input('url'),
             'short_code'   => $code,
+            'user_id'      => auth()->id(),
         ]);
 
         return back()->with('short_url', url($code));
@@ -86,7 +87,8 @@ class ShortUrlController extends Controller
      */
     public function analytics()
     {
-        $urls = ShortUrl::orderByDesc('hits')
+        $urls = ShortUrl::where('user_id', auth()->id())
+                        ->orderByDesc('hits')
                         ->orderByDesc('created_at')
                         ->get();
 
