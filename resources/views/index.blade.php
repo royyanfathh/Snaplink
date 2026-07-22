@@ -6,6 +6,44 @@
 @section('content')
 
 <section class="hero">
+    {{-- Floating Neobrutalist Shapes --}}
+    <div class="floating-shapes-container">
+        <!-- Orange Star/Flower badge -->
+        <div class="floating-shape shape-1">
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 5 L61 24 L82 17 L77 38 L95 50 L77 62 L82 83 L61 76 L50 95 L39 76 L18 83 L23 62 L5 50 L23 38 L18 17 L39 24 Z" fill="var(--accent-red)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="miter"/>
+            </svg>
+        </div>
+        <!-- Blue Star/Asterisk -->
+        <div class="floating-shape shape-2">
+            <svg width="90" height="90" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0 L58 35 L90 20 L68 45 L95 70 L60 70 L50 100 L40 70 L5 70 L32 45 L10 20 L42 35 Z" fill="var(--accent-blue)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="miter"/>
+            </svg>
+        </div>
+        <!-- Green Asterisk/Badge -->
+        <div class="floating-shape shape-3">
+            <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 L50 90 M10 50 L90 50 M22 22 L78 78 M22 78 L78 22" stroke="var(--accent-green)" stroke-width="12" stroke-linecap="square"/>
+            </svg>
+        </div>
+        <!-- Yellow Staircase/L-shape -->
+        <div class="floating-shape shape-4">
+            <svg width="75" height="75" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 15 H85 V45 H50 V85 H15 Z" fill="var(--accent-yellow)" stroke="var(--ink)" stroke-width="4" stroke-linejoin="miter"/>
+            </svg>
+        </div>
+        <!-- Curly Handdrawn Arrow Left -->
+        <div class="floating-shape shape-5">
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 80 C 10 50, 40 20, 80 40 C 90 45, 75 70, 60 60 C 50 50, 65 30, 45 40" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M55 25 L45 40 L60 48" stroke="var(--ink)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Brutal badge with offset shadow -->
+        <div class="floating-shape shape-6">
+            <div class="brutal-badge">LINK.ZIP</div>
+        </div>
+    </div>
 
     {{-- Eyebrow --}}
     <div class="hero-eyebrow">
